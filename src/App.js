@@ -22,18 +22,19 @@ class App extends Component {
   }
   updateIsWinner() {
     let { isWinner, winnerType } = checkIfWinner(this.state.spinResults);
+
+    // TODO document this helper
+    // isWinner = Math.random() > 0.5;
+    // winnerType = 'coffee';
     
     // HACK HACK HACK
     // when calling setState({isWinner}) each component (Reel, PullButton, PrizeArea) will be rendered again
     // Gotta hack this with the DOM, which is SUPER HACKY, but hey!!! 
     
-    const prizeAreaElement = document.querySelector('.PrizeArea');
     if (isWinner) {
-      prizeAreaElement.classList.add('is-winner');  
       const winnerImage = document.querySelector(`.PrizeArea-img.${winnerType}`);
       winnerImage.classList.add('visible')
     } else {
-      prizeAreaElement.classList.remove('is-winner');  
       document.querySelectorAll('.PrizeArea-img').forEach(el => el.classList.remove('visible'))
     }
     
