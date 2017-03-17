@@ -3,7 +3,9 @@ export const reelTwoElements = ['coffee-filter', 'tea-strainer', 'espresso-tampe
 export const reelThreeElements = ['coffee-grounds', 'loose-tea', 'espresso-beans'];
 
 export const spin = () => {
-  const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)] 
+  // TODO remove this hack
+  // const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)] 
+  const getRandomElement = arr => arr[2];
   return [
     getRandomElement(reelOneElements),
     getRandomElement(reelTwoElements),
@@ -15,11 +17,11 @@ export const eachContains = (arr, target) => arr.every(str => str.includes(targe
 
 export const checkIfWinner = arr => {
   if (eachContains(arr, 'coffee')) {
-    return {isWinner: true, type: 'coffee'};
+    return {isWinner: true, winnerType: 'coffee', winningArray: arr};
   } else if (eachContains(arr, 'tea')) {
-    return {isWinner: true, type: 'tea'};
+    return {isWinner: true, winnerType: 'tea', winningArray: arr};
   } else if (eachContains(arr, 'espresso')) {
-    return {isWinner: true, type: 'espresso'};
+    return {isWinner: true, winnerType: 'espresso', winningArray: arr};
   }
-  return {isWinner: false, type: null};
+  return {isWinner: false, winnerType: null, winningArray: arr};
 }

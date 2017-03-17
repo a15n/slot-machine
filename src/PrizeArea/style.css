@@ -1,3 +1,20 @@
-.PrizeArea.is-winner {
-  color: green;
+.PrizeArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.PrizeArea-img {
+  transition-property: max-height;
+  transition-duration: 2s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.PrizeArea-img.visible {
+  max-height: 500px; /* approximate max height */
+}
+
+.PrizeArea-img:not(.visible) {
+  max-height: 0;
 }

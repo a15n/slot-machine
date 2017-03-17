@@ -21,7 +21,7 @@ class App extends Component {
     this.setState({ spinResults });
   }
   updateIsWinner() {
-    const { isWinner } = checkIfWinner(this.state.spinResults);
+    let { isWinner, winnerType } = checkIfWinner(this.state.spinResults);
     
     // HACK HACK HACK
     // when calling setState({isWinner}) each component (Reel, PullButton, PrizeArea) will be rendered again
@@ -29,11 +29,12 @@ class App extends Component {
     
     const prizeAreaElement = document.querySelector('.PrizeArea');
     if (isWinner) {
-      prizeAreaElement.innerHTML = 'WINNER'
       prizeAreaElement.classList.add('is-winner');  
+      const winnerImage = document.querySelector(`.PrizeArea-img.${winnerType}`);
+      winnerImage.classList.add('visible')
     } else {
-      prizeAreaElement.innerHTML = ''
       prizeAreaElement.classList.remove('is-winner');  
+      document.querySelectorAll('.PrizeArea-img').forEach(el => el.classList.remove('visible'))
     }
     
   }
