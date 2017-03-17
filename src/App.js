@@ -13,19 +13,19 @@ class App extends Component {
     };
     // TODO rename updateState
     this.updateState = this.updateState.bind(this)
-    this.updateIsWinner = this.updateIsWinner.bind(this)
+    this.handleTransitionEnd = this.handleTransitionEnd.bind(this)
   }
   updateState() {
     const spinResults = spin();
     
     this.setState({ spinResults });
   }
-  updateIsWinner() {
+  handleTransitionEnd() {
     let { isWinner, winnerType } = checkIfWinner(this.state.spinResults);
 
     // TODO document this helper
     // isWinner = Math.random() > 0.5;
-    // winnerType = 'coffee';
+    // winnerType = 'tea';
     
     // HACK HACK HACK
     // when calling setState({isWinner}) each component (Reel, PullButton, PrizeArea) will be rendered again
@@ -34,6 +34,14 @@ class App extends Component {
     if (isWinner) {
       const winnerImage = document.querySelector(`.PrizeArea-img.${winnerType}`);
       winnerImage.classList.add('visible')
+
+      const reelElement = document.querySelector('.Reel')
+      reelElement.classList.add('winning');
+      reelElement.addEventListener('transitionend', e => {
+        if (e.propertyName === 'transform') {
+          reelElement.classList.remove('winning')  
+        }
+      })
     } else {
       document.querySelectorAll('.PrizeArea-img').forEach(el => el.classList.remove('visible'))
     }
@@ -43,7 +51,7 @@ class App extends Component {
     const { spinResults, isWinner } = this.state;
     return (
       <div className="SlotMachine">
-        <Reel spinResults={spinResults} handleTransitionEnd={this.updateIsWinner}/>
+        <Reel spinResults={spinResults} handleTransitionEnd={this.handleTransitionEnd}/>
         <div className="pullButtonContainer">
           <PullButton pullFunction={this.updateState}/>
         </div>

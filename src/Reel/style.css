@@ -3,4 +3,9 @@
   overflow: hidden;
   background-color: white;
   border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.Reel.winning {
+  transform: scale(1.05);
 }
