@@ -1,0 +1,17 @@
+.PullButton {
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px;
+  border: solid #1f628d 2px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+.PullButton:hover {
+  background: #3cb0fd;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+}

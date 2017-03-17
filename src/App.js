@@ -41,9 +41,11 @@ class App extends Component {
   render() {
     const { spinResults, isWinner } = this.state;
     return (
-      <div>
+      <div className="SlotMachine">
         <Reel spinResults={spinResults} handleTransitionEnd={this.updateIsWinner}/>
-        <PullButton pullFunction={this.updateState}/>
+        <div className="pullButtonContainer">
+          <PullButton pullFunction={this.updateState}/>
+        </div>
         <PrizeArea isWinner={isWinner}/>
       </div>
     )

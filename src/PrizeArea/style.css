@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   height: 300px;
+  background: white;
+  border-radius: 10px;
 }
 
 .PrizeArea-img {
