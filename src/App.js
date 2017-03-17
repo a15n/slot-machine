@@ -7,20 +7,19 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      reel: spin(),
+      spinResults: spin(),
       isWinner: false,
     };
     this.updateState = this.updateState.bind(this)
   }
   updateState() {
-    const reel = spin();
-    const isWinner = checkIfWinner(reel);
+    const spinResults = spin();
+    const isWinner = checkIfWinner(spinResults);
     
-    this.setState({ reel, isWinner });
+    this.setState({ spinResults, isWinner });
   }
   render() {
-    // TODO rename as spinResults
-    const { reel:spinResults } = this.state;
+    const { spinResults } = this.state;
     return (
       <div>
         <Reel spinResults={spinResults}/>
