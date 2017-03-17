@@ -1,16 +1,24 @@
+/*IF WIDTH/HEIGHT IS CHANGED THEN reelPanelHeight MUST BE CHANGED*/
 .ReelPanel {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border: 1px solid black;
   box-sizing: border-box;
 }
 
-/*TODO improve this transition (maybe bezier)*/
 .ReelPanel .wrapper {
-  transition: margin-top 0.5s ease-in-out;
+  transition: margin-top 2.5s cubic-bezier(0.82, 0.02, 0.35, 1.11);
 }
 
 .slot {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot img {
+  width: 75%;
+  z-index: -1;
 }
