@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
 import ReactDOM from 'react-dom';
+import tiredSrc from './images/tired.jpg'
 import coffeeFilterSrc from './images/coffee-filter.jpg';
 import coffeeMakerSrc from './images/coffee-maker.jpg';
 import coffeeGroundsSrc from './images/coffee-grounds.jpg';
@@ -12,6 +13,7 @@ import espressoTamperSrc from './images/espresso-tamper.jpg';
 import espressoBeansSrc from './images/espresso-beans.jpg';
 
 const imageMap = {
+  'tired': tiredSrc,
   'coffee-maker': coffeeMakerSrc,
   'coffee-filter': coffeeFilterSrc,
   'coffee-grounds': coffeeGroundsSrc,
@@ -23,7 +25,7 @@ const imageMap = {
   'espresso-beans': espressoBeansSrc,
 }
 
-let cumulativeElementsArray = [];
+let cumulativeElementsArray = ['tired'];
 
 class ReelPanel extends Component {
   constructor() {
