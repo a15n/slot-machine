@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
 import './style.css';
 import ReelPanel from './ReelPanel/component';
+import { reelOneElements } from '../utils';
 
 class Reel extends Component {
-  renderPanel(panelText, i) {
-    return (
-      <div key={i}>
-        <ReelPanel panelText={panelText}></ReelPanel>
-      </div>
-    )
-  }
   render() {
-    const { reel } = this.props
+    const { spinResults } = this.props;
+    const [ reelOneTarget ] = spinResults;
     return (
       <div className="Reel">
-        {reel.map(this.renderPanel)}
+        <ReelPanel targetElement={reelOneTarget} reelElements={reelOneElements} />  
       </div>
-      
     )
   }
 }
 
 Reel.propTypes = {
-  reel: React.PropTypes.array.isRequired,
+  spinResults: React.PropTypes.array.isRequired,
 }
 
 export default Reel;

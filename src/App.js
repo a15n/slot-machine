@@ -3,7 +3,6 @@ import { spin, checkIfWinner } from './utils';
 import PullButton from './PullButton/component';
 import Reel from './Reel/component';
 
-
 class App extends Component {
   constructor() {
     super()
@@ -20,15 +19,12 @@ class App extends Component {
     this.setState({ reel, isWinner });
   }
   render() {
-    const { reel } = this.state;
+    // TODO rename as spinResults
+    const { reel:spinResults } = this.state;
     return (
       <div>
-        <div>
-          <Reel reel={reel}/>
-        </div>
-        <div>
-          <PullButton pullFunction={this.updateState}/>
-        </div>
+        <Reel spinResults={spinResults}/>
+        <PullButton pullFunction={this.updateState}/>
       </div>
     )
   }

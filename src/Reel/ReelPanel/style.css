@@ -1,4 +1,16 @@
 .ReelPanel {
   width: 100px;
   height: 100px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+/*TODO improve this transition (maybe bezier)*/
+.ReelPanel .wrapper {
+  transition: margin-top 1s ease-in-out;
+}
+
+.slot {
+  width: 100px;
+  height: 100px;
 }

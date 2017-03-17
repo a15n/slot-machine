@@ -1,7 +1,8 @@
+export const reelOneElements = ['coffee maker', 'teapot', 'espresso machine'];
+export const reelTwoElements = ['coffee filter', 'tea strainer', 'espresso tamper'];
+export const reelThreeElements = ['coffee grounds', 'loose tea', 'espresso beans'];
+
 export const spin = () => {
-  const reelOneElements = ['coffee maker', 'teapot', 'espresso machine']
-  const reelTwoElements = ['coffee filter', 'tea strainer', 'espresso tamper']
-  const reelThreeElements = ['coffee grounds', 'loose tea', 'espresso beans']
   const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)] 
   return [
     getRandomElement(reelOneElements),
