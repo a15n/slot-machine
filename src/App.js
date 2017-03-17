@@ -11,19 +11,37 @@ class App extends Component {
       spinResults: spin(),
       isWinner: false,
     };
+    // TODO rename updateState
     this.updateState = this.updateState.bind(this)
+    this.updateIsWinner = this.updateIsWinner.bind(this)
   }
   updateState() {
     const spinResults = spin();
-    const isWinner = checkIfWinner(spinResults);
     
-    this.setState({ spinResults, isWinner });
+    this.setState({ spinResults });
+  }
+  updateIsWinner() {
+    const isWinner = checkIfWinner(this.state.spinResults);
+    
+    // HACK HACK HACK
+    // when calling setState({isWinner}) each component (Reel, PullButton, PrizeArea) will be rendered again
+    // Gotta hack this with the DOM, which is SUPER HACKY, but hey!!! 
+    
+    const prizeAreaElement = document.querySelector('.PrizeArea');
+    if (isWinner) {
+      prizeAreaElement.innerHTML = 'WINNER'
+      prizeAreaElement.classList.add('is-winner');  
+    } else {
+      prizeAreaElement.innerHTML = ''
+      prizeAreaElement.classList.remove('is-winner');  
+    }
+    
   }
   render() {
     const { spinResults, isWinner } = this.state;
     return (
       <div>
-        <Reel spinResults={spinResults}/>
+        <Reel spinResults={spinResults} handleTransitionEnd={this.updateIsWinner}/>
         <PullButton pullFunction={this.updateState}/>
         <PrizeArea isWinner={isWinner}/>
       </div>

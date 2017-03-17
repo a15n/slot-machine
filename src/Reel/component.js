@@ -5,13 +5,23 @@ import ReelPanel from './ReelPanel/component';
 
 class Reel extends Component {
   render() {
-    const { spinResults } = this.props;
+    const { spinResults, handleTransitionEnd } = this.props;
     const [ reelOneTarget, reelTwoTarget, reelThreeTarget ] = spinResults;
     return (
       <div className="Reel">
-        <ReelPanel targetElement={reelOneTarget} reelElements={reelOneElements} />  
-        <ReelPanel targetElement={reelTwoTarget} reelElements={reelTwoElements} />  
-        <ReelPanel targetElement={reelThreeTarget} reelElements={reelThreeElements} />  
+        <ReelPanel 
+          targetElement={reelOneTarget} 
+          reelElements={reelOneElements} 
+          handleTransitionEnd={handleTransitionEnd}
+        />
+        <ReelPanel 
+          targetElement={reelTwoTarget} 
+          reelElements={reelTwoElements} 
+        />
+        <ReelPanel 
+          targetElement={reelThreeTarget} 
+          reelElements={reelThreeElements} 
+        />
       </div>
     )
   }
@@ -19,6 +29,7 @@ class Reel extends Component {
 
 Reel.propTypes = {
   spinResults: React.PropTypes.array.isRequired,
+  handleTransitionEnd: React.PropTypes.func.isRequired,
 }
 
 export default Reel;

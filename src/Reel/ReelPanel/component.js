@@ -20,7 +20,14 @@ class ReelPanel extends Component {
     const newMarginTop = lastMatchingElementIndex * 100 * -1;
     const wrapper = ReactDOM.findDOMNode(this.refs.wrapper);
 
-    wrapper.style['margin-top'] = `${newMarginTop}px`;    
+    wrapper.style['margin-top'] = `${newMarginTop}px`;
+    
+    // bubble up that the transition has ended
+    if (this.props.handleTransitionEnd) {
+      wrapper.addEventListener('transitionend', (event) => {
+        this.props.handleTransitionEnd();
+      });
+    }
   }
   renderReelElement(el, i) {
     return (
@@ -43,6 +50,12 @@ class ReelPanel extends Component {
       </div>
     )
   }
+}
+
+ReelPanel.propTypes = {
+  targetElement: React.PropTypes.string.isRequired,
+  reelElements: React.PropTypes.array.isRequired,
+  handleTransitionEnd: React.PropTypes.func,
 }
 
 export default ReelPanel;

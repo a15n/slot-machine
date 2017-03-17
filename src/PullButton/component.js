@@ -9,7 +9,7 @@ class PullButton extends Component {
   }
 }
 
-PullButton.PropTypes = {
+PullButton.propTypes = {
   pullFunction: React.PropTypes.func.isRequired,
 }
 

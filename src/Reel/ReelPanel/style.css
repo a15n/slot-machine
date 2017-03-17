@@ -7,7 +7,7 @@
 
 /*TODO improve this transition (maybe bezier)*/
 .ReelPanel .wrapper {
-  transition: margin-top 1s ease-in-out;
+  transition: margin-top 0.5s ease-in-out;
 }
 
 .slot {

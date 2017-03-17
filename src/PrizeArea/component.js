@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+import './style.css';
 
 class PrizeArea extends Component {
   render() {
-    const winnerLoser = this.props.isWinner ? 'Winner' : 'Loser';
-    return <h1>{winnerLoser}</h1>
+    return (
+      <div className="PrizeArea">
+
+      </div>
+    )
   }
 }
-
-PrizeArea.PropTypes = {
-  isWinner: React.PropTypes.bool.isRequired,
-};
 
 export default PrizeArea;
