@@ -1,5 +1,5 @@
 .Reel {
-  /*display: flex;*/
+  display: flex;
   background: grey;
   width: 300px;
   overflow: hidden;
