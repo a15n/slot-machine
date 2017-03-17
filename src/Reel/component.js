@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
-import ReelPanel from './ReelPanel/component';
 import { reelOneElements, reelTwoElements, reelThreeElements } from '../utils';
+import ReelPanel from './ReelPanel/component';
 
 class Reel extends Component {
   render() {
