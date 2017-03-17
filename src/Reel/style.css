@@ -1,0 +1,5 @@
+.Reel {
+  display: flex;
+  background: grey;
+  width: 300px;
+}

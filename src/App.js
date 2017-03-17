@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
-import PullButton from './PullButton/component'
-import { spin, checkIfWinner } from './utils'
+import React, { Component } from 'react';
+import { spin, checkIfWinner } from './utils';
+import PullButton from './PullButton/component';
+import Reel from './Reel/component';
+
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      reel: [],
+      reel: spin(),
       isWinner: false,
     };
     this.updateState = this.updateState.bind(this)
@@ -18,10 +20,11 @@ class App extends Component {
     this.setState({ reel, isWinner });
   }
   render() {
+    const { reel } = this.state;
     return (
       <div>
         <div>
-          <h2>Welcome to React</h2>
+          <Reel reel={reel}/>
         </div>
         <div>
           <PullButton pullFunction={this.updateState}/>
