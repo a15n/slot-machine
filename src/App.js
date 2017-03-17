@@ -21,7 +21,7 @@ class App extends Component {
     this.setState({ spinResults });
   }
   updateIsWinner() {
-    const isWinner = checkIfWinner(this.state.spinResults);
+    const { isWinner } = checkIfWinner(this.state.spinResults);
     
     // HACK HACK HACK
     // when calling setState({isWinner}) each component (Reel, PullButton, PrizeArea) will be rendered again

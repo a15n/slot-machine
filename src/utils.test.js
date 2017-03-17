@@ -16,10 +16,12 @@ describe('eachContains', () => {
 
 describe('checkIfWinner', () => {
   it('should be true if the array contains any triplets', () => {
-    expect(checkIfWinner(threeCoffeeArray)).toBe(true);
+    const { isWinner } = checkIfWinner(threeCoffeeArray);
+    expect(isWinner).toBe(true);
   });
 
   it('should be false if the array does not contains any triplets', () => {
-    expect(checkIfWinner(twoTeaArray)).toBe(false);
+    const { isWinner } = checkIfWinner(twoTeaArray);
+    expect(isWinner).toBe(false);
   });
 });
