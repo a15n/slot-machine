@@ -3,9 +3,7 @@ export const reelTwoElements = ['coffee-filter', 'tea-strainer', 'espresso-tampe
 export const reelThreeElements = ['coffee-grounds', 'loose-tea', 'espresso-beans'];
 
 export const spin = () => {
-  // TODO remove this hack
   const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)] 
-  // const getRandomElement = arr => arr[2];
   return [
     getRandomElement(reelOneElements),
     getRandomElement(reelTwoElements),

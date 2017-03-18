@@ -1,3 +1,8 @@
+html {
+  background: url(https://upload.wikimedia.org/wikipedia/en/8/82/Las_Vegas_slot_machines.jpg) bottom center grey;
+  background-size: cover;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -5,14 +10,4 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
-
-.SlotMachine {
-  background: brown;
-  padding: 50px;
-  border-radius: 10px;
-}
-
-.pullButtonContainer {
-  padding: 20px;
 }

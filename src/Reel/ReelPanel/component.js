@@ -64,7 +64,6 @@ class ReelPanel extends Component {
   }
   render() {
     const { reelElements } = this.props;
-    // TODO explain this appraoch
     cumulativeElementsArray = cumulativeElementsArray
         .concat(reelElements)
         .concat(reelElements);

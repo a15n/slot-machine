@@ -1,0 +1,10 @@
+.SlotMachine {
+  background: #654321;
+  padding: 50px;
+  border: 10px solid #883333;
+  border-radius: 10px;
+}
+
+.pullButtonContainer {
+  padding: 25px 0;
+}

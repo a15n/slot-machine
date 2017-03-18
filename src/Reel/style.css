@@ -2,8 +2,9 @@
   display: flex;
   overflow: hidden;
   background-color: white;
+  border: 5px solid black;
   border-radius: 10px;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .Reel.winning {

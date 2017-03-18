@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 import { spin, checkIfWinner } from './utils';
 import PullButton from './PullButton/component';
 import Reel from './Reel/component';
@@ -11,7 +12,6 @@ class App extends Component {
       spinResults: spin(),
       isWinner: false,
     };
-    // TODO rename updateState
     this.updateState = this.updateState.bind(this)
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this)
   }
@@ -23,15 +23,14 @@ class App extends Component {
   handleTransitionEnd() {
     let { isWinner, winnerType } = checkIfWinner(this.state.spinResults);
 
-    // TODO document this helper
+    // isWinner helper
     // isWinner = Math.random() > 0.5;
-    // winnerType = 'tea';
+    // winnerType = 'tea'; // or 'coffee' or 'espresso'
     
-    // HACK HACK HACK
-    // when calling setState({isWinner}) each component (Reel, PullButton, PrizeArea) will be rendered again
-    // Gotta hack this with the DOM, which is SUPER HACKY, but hey!!! 
     
     if (isWinner) {
+      // when calling setState({isWinner}) each component (Reel, PullButton, PrizeArea) will be rendered again
+      // Gotta hack this with the DOM, which is SUPER HACKY, but hey....
       const winnerImage = document.querySelector(`.PrizeArea-img.${winnerType}`);
       winnerImage.classList.add('visible')
 
