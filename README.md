@@ -2,7 +2,10 @@
 
 ![slot machine](https://cloud.githubusercontent.com/assets/7050871/24067402/666a67e0-0b39-11e7-8f50-6100f28fe47e.gif)
 
-## install
+## demo
+[http://thumbtack-slot-machine.surge.sh/](http://thumbtack-slot-machine.surge.sh/)
+
+## local install
 
 * `git clone https://github.com/a15n/slot-machine.git && cd slot-machine/`
 * `npm install && npm run start`
